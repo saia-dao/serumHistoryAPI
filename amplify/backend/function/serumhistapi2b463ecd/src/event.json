@@ -1,0 +1,7 @@
+{
+  "httpMethod": "GET",
+  "body": "{\"name\": \"Amplify\"}",
+  "path": "/market",
+  "resource": "MTc1macY8G2v1MubFxDp4W8cooaSBUZvc2KqaCNwhQE",
+  "queryStringParameters": {}
+}

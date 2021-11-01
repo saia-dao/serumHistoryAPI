@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-serumhistapi-dev-205640-authRole",
+      "UnauthRoleArn": "arn:aws:iam::393451470614:role/amplify-serumhistapi-dev-205640-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::393451470614:role/amplify-serumhistapi-dev-205640-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-serumhistapi-dev-205640-deployment",
+      "UnauthRoleName": "amplify-serumhistapi-dev-205640-unauthRole",
+      "StackName": "amplify-serumhistapi-dev-205640",
+      "StackId": "arn:aws:cloudformation:eu-west-3:393451470614:stack/amplify-serumhistapi-dev-205640/3891aca0-3b56-11ec-bebe-06a4f7925310",
+      "AmplifyAppId": "d1zbcxv4jgwtdb"
+    },
+    "categories": {
+      "function": {
+        "serumhistapi2b463ecd": {
+          "deploymentBucketName": "amplify-serumhistapi-dev-205640-deployment",
+          "s3Key": "amplify-builds/serumhistapi2b463ecd-382b4c31636763487236-build.zip"
+        }
+      }
+    }
+  }
+}

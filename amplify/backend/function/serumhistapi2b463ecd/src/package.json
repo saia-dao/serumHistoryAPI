@@ -1,0 +1,25 @@
+{
+  "name": "serumhistory3faba7bc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@blockworks-foundation/mango-client": "^3.1.1",
+    "@project-serum/serum": "^0.13.60",
+    "@solana/web3.js": "^1.6.0",
+    "aws-serverless-express": "^3.3.5",
+    "aws-xray-sdk-core": "^3.3.3",
+    "axios": "^0.21.4",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.5",
+    "express": "^4.15.2",
+    "lru-cache": "^5.1.1",
+    "redis": "^3.1.2",
+    "tedis": "^0.1.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
