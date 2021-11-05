@@ -30,8 +30,9 @@ app.use(awsServerlessExpressMiddleware.eventContext());
 
 // Enable CORS for all methods
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "https://dev.staratlas.exchange/");
   res.header("Access-Control-Allow-Headers", "*");
+  res.header("Access-Control-Allow-Methods", "OPTIONS,POST,GET");
   next();
 });
 
@@ -54,7 +55,6 @@ const today = Date.now();
 // const yesterday = today - 24 * 60 * 60 * 1000
 
 app.get("/tv/config", async (req, res) => {
-  console.log("/tv/config req", req);
   try {
     const response = {
       supported_resolutions: Object.keys(resolutions),
@@ -81,7 +81,6 @@ const priceScales = {
 };
 
 app.get("/tv/symbols", async (req, res) => {
-  console.log("/tv/symbols req", req);
   try {
     const symbol = req.query.symbol;
     const response = {
@@ -147,7 +146,6 @@ app.get("/tv/history", async (req, res) => {
     if (from == to) {
       to += resolution;
     }
-    console.log("from to", from, to);
 
     const loadTrades = async (key, cache) => {
       const cached = cache?.get(key);
