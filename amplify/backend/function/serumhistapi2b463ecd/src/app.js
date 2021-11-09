@@ -30,9 +30,9 @@ app.use(awsServerlessExpressMiddleware.eventContext());
 
 // Enable CORS for all methods
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://dev.staratlas.exchange/");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
-  res.header("Access-Control-Allow-Methods", "OPTIONS,POST,GET");
+  res.header("Access-Control-Allow-Methods", "*");
   next();
 });
 
@@ -121,6 +121,9 @@ app.get("/tv/history", async (req, res) => {
   const validSymbol = marketName != undefined;
   const validResolution = resolution != undefined;
   const validFrom = true || new Date(from).getFullYear() >= 2021;
+  console.log( "marketPk", marketPk);
+  // console.log( "marketName", marketName);
+  // console.log( "nativeMarketsV3[marketPk];", nativeMarketsV3[marketPk]);
   console.log(
     "validSymbol && validResolution && validFrom",
     validSymbol && validResolution && validFrom
@@ -187,7 +190,7 @@ app.get("/tv/history", async (req, res) => {
     // res.status(500).send(error)
     res.json({ status: 500, url: req.url, body: marketName, err: err });
   }
-});
+})
 
 app.get("/trades/address/*", async (req, res) => {
   // req.apiGateway.event req.apiGateway.context --  available
