@@ -82,7 +82,7 @@ const priceScales = {
 
 app.get("/tv/symbols", async (req, res) => {
   try {
-    const symbol = req.query.symbol;
+    const symbol = req.query.symbol == "POLIS" ? "POLIS/USDC" : req.query.symbol
     const response = {
       name: symbol,
       ticker: symbol,
@@ -111,7 +111,7 @@ app.get("/tv/symbols", async (req, res) => {
 
 app.get("/tv/history", async (req, res) => {
   // parse
-  const marketPk = req.query.symbol;
+  const marketPk = req.query.symbol == "POLIS" ? "POLIS/USDC" : req.query.symbol
   const marketName = nativeMarketsV3[marketPk];
   const resolution = resolutions[req.query.resolution];
   let from = parseInt(req.query.from) * 1000;
@@ -121,14 +121,12 @@ app.get("/tv/history", async (req, res) => {
   const validSymbol = marketName != undefined;
   const validResolution = resolution != undefined;
   const validFrom = true || new Date(from).getFullYear() >= 2021;
-  console.log( "marketPk", marketPk);
-  // console.log( "marketName", marketName);
   // console.log( "nativeMarketsV3[marketPk];", nativeMarketsV3[marketPk]);
-  console.log(
-    "validSymbol && validResolution && validFrom",
-    validSymbol && validResolution && validFrom
-  );
   if (!(validSymbol && validResolution && validFrom)) {
+    console.log(
+      "validSymbol && validResolution && validFrom",
+      validSymbol && validResolution && validFrom
+    );
     const error = { s: "error", validSymbol, validResolution, validFrom };
     res.json({
       status: 404,
@@ -194,17 +192,22 @@ app.get("/tv/history", async (req, res) => {
 
 app.get("/trades/address/*", async (req, res) => {
   // req.apiGateway.event req.apiGateway.context --  available
+  console.log("req.params", req.params)
   const marketPk = req.params["0"];
+  console.log( "marketPk /trades/address/*", marketPk);
   const marketName = symbolsByPk[marketPk];
   const key = keyForDay(today, marketName);
 
   try {
+    console.log("key", key)
     const reply = await lrangey(key, 0, -1);
     const trades = reply
       .flat()
       .slice(-50)
       .reverse()
       .map((t) => coder.decode(t));
+
+      console.log("trades", trades)
 
     const response = {
       success: true,
