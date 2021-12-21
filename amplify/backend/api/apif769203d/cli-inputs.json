@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "paths": {
+    "/trades/address": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "serumhistapi2b463ecd"
+    },
+    "/market": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "serumhistapi2b463ecd"
+    },
+    "/tv": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "serumhistapi2b463ecd"
+    },
+    "/tv/history": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "serumhistapi2b463ecd"
+    },
+    "/tv/config": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "serumhistapi2b463ecd"
+    },
+    "/tv/symbols": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "serumhistapi2b463ecd"
+    }
+  }
+}
