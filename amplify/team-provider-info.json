@@ -15,7 +15,7 @@
       "function": {
         "serumhistapi2b463ecd": {
           "deploymentBucketName": "amplify-serumhistapi-dev-205640-deployment",
-          "s3Key": "amplify-builds/serumhistapi2b463ecd-2b553867756a4e74706c-build.zip"
+          "s3Key": "amplify-builds/serumhistapi2b463ecd-31646e5633433662627a-build.zip"
         }
       }
     }
